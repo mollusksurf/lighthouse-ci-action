@@ -39,7 +39,7 @@ async function main() {
   }
 
   if (input.authBypassToken) {
-    const extraHeaders = `"{\"oxygen-auth-bypass-token\": \"${input.authBypassToken}\" }"`
+    const extraHeaders = JSON.stringify(`"{\"oxygen-auth-bypass-token\": \"${input.authBypassToken}\" }"`)
     core.info(`extraHeaders: ${extraHeaders}`)
     collectArgs.push(`--extraHeaders=${extraHeaders}`)
   }
